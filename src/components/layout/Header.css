@@ -2,8 +2,9 @@
   position: fixed;
   inset: 0 0 auto 0;
   z-index: var(--z-header);
-  transition: background var(--dur) var(--ease), box-shadow var(--dur) var(--ease),
-    backdrop-filter var(--dur) var(--ease);
+  background: var(--white);
+  box-shadow: 0 6px 24px rgba(16, 11, 37, 0.08);
+  border-bottom: 1px solid var(--border);
 }
 .header__inner {
   display: flex;
@@ -11,13 +12,6 @@
   justify-content: space-between;
   gap: 1rem;
   height: 74px;
-}
-
-.header--solid {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: saturate(160%) blur(14px);
-  box-shadow: 0 6px 24px rgba(16, 11, 37, 0.08);
-  border-bottom: 1px solid var(--border);
 }
 
 .header__brand {

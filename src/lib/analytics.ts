@@ -13,6 +13,7 @@ export type TrackEvent =
   | 'cta_click'
   | 'phone_click'
   | 'whatsapp_click'
+  | 'social_click'
   | 'location_click'
   | 'directions_click'
   | 'trial_form_start'

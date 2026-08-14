@@ -12,7 +12,7 @@ export function Header() {
 
   return (
     <>
-      <header className="header header--solid">
+      <header className="header">
         <div className="container container--wide header__inner">
           <Link to="/" className="header__brand" aria-label="Druva Badminton Academy — Home">
             <Logo variant="default" />
@@ -37,7 +37,7 @@ export function Header() {
               className="btn btn--primary btn--sm header__cta"
               onClick={() => track('cta_click', { cta: 'book_trial', source: 'header' })}
             >
-              Book a Free Trial
+              Book a Free Consultation
             </Link>
             <button
               type="button"

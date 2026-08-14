@@ -1,26 +1,60 @@
-.fab-whatsapp {
+.fab-dock {
   position: fixed;
   right: 20px;
   bottom: 24px;
   z-index: var(--z-sticky-cta);
-  width: 58px;
-  height: 58px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.fab-dock__item {
+  position: relative;
   display: grid;
   place-items: center;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background: #25d366;
   color: #fff;
-  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.45);
-  transition: transform var(--dur) var(--ease);
+  box-shadow: 0 8px 20px rgba(16, 11, 37, 0.18);
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
-.fab-whatsapp:hover {
+.fab-dock__item:hover {
   transform: scale(1.08);
 }
-.fab-whatsapp svg {
-  width: 30px;
-  height: 30px;
+.fab-dock__item svg {
+  width: 22px;
+  height: 22px;
 }
-.fab-whatsapp__pulse {
+
+.fab-dock__item--social {
+  width: 40px;
+  height: 40px;
+  background: var(--white);
+  color: var(--purple-700);
+  box-shadow: 0 6px 16px rgba(16, 11, 37, 0.14);
+}
+.fab-dock__item--social svg {
+  width: 19px;
+  height: 19px;
+}
+
+.fab-dock__item--call {
+  background: var(--purple-700);
+}
+
+.fab-dock__item--whatsapp {
+  width: 58px;
+  height: 58px;
+  background: #25d366;
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.45);
+}
+.fab-dock__item--whatsapp svg {
+  width: 28px;
+  height: 28px;
+}
+
+.fab-dock__pulse {
   position: absolute;
   inset: 0;
   border-radius: 50%;
@@ -32,14 +66,14 @@
   100% { transform: scale(1.8); opacity: 0; }
 }
 
-/* On mobile the sticky bottom bar handles WhatsApp — hide the floating bubble. */
+/* On mobile the sticky bottom bar handles Call / WhatsApp — hide the dock. */
 @media (max-width: 768px) {
-  .fab-whatsapp {
+  .fab-dock {
     display: none;
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .fab-whatsapp__pulse {
+  .fab-dock__pulse {
     animation: none;
   }
 }

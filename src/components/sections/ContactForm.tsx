@@ -91,7 +91,7 @@ export function ContactForm() {
             </div>
           ) : (
             <form className="contact__form" onSubmit={onSubmit} noValidate>
-              <h3 className="contact__form-title">Book a Free Trial</h3>
+              <h3 className="contact__form-title">Book a Free Consultation</h3>
 
               <div className="field">
                 <label htmlFor="cf-name">Name<span aria-hidden="true">*</span></label>
@@ -140,7 +140,7 @@ export function ContactForm() {
               </div>
 
               <button type="submit" className="btn btn--primary btn--block" disabled={status === 'sending' || !valid}>
-                {status === 'sending' ? 'Sending…' : <><Send aria-hidden="true" /> Book a Free Trial</>}
+                {status === 'sending' ? 'Sending…' : <><Send aria-hidden="true" /> Book a Free Consultation</>}
               </button>
               <p className="contact__form-hint">We'll never share your details. By submitting you agree to be contacted about coaching.</p>
             </form>

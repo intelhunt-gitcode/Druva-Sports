@@ -9,7 +9,7 @@ export function ContactPage() {
   return (
     <>
       <Seo
-        title="Contact & Book a Free Trial | Druva Badminton Academy"
+        title="Contact & Book a Free Consultation | Druva Badminton Academy"
         description="Book a free badminton trial at Druva Badminton Academy, Hyderabad. Call, WhatsApp or fill the enquiry form for kids, adult, personal coaching or fitness training."
         path="/contact"
         schema={[organizationSchema(), breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Contact', path: '/contact' }])]}

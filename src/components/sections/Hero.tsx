@@ -35,7 +35,7 @@ export function Hero() {
 
           <div className="hero__ctas">
             <Link to="/contact" className="btn btn--primary" onClick={() => track('cta_click', { cta: 'book_trial', source: 'hero' })}>
-              Book a Free Trial <ArrowRight aria-hidden="true" />
+              Book a Free Consultation <ArrowRight aria-hidden="true" />
             </Link>
             <Link to="/programs" className="btn btn--ghost-light" onClick={() => track('cta_click', { cta: 'explore_programs', source: 'hero' })}>
               Explore Programs

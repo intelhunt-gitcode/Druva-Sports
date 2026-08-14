@@ -15,14 +15,14 @@ export function FinalCTA() {
       </div>
       <div className="container final-cta__inner">
         <Reveal>
-          <span className="eyebrow">Book a Free Trial</span>
+          <span className="eyebrow">Book a Free Consultation</span>
           <h2 className="final-cta__title">Ready to Take Your Game to the Next Level?</h2>
           <p className="final-cta__text">
             Choose your location, find your batch and start your badminton journey with Druva.
           </p>
           <div className="final-cta__actions">
             <Link to="/contact" className="btn btn--primary" onClick={() => track('cta_click', { cta: 'book_trial', source: 'final_cta' })}>
-              Book a Free Trial <ArrowRight aria-hidden="true" />
+              Book a Free Consultation <ArrowRight aria-hidden="true" />
             </Link>
             <a
               href={WHATSAPP_LINKS.trial()}

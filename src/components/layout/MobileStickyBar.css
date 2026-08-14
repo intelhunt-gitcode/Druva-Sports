@@ -15,13 +15,15 @@
   align-items: center;
   justify-content: center;
   gap: 3px;
-  padding: 0.6rem 0.4rem;
+  padding: 0.6rem 0.3rem;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 0.72rem;
-  letter-spacing: 0.02em;
+  font-size: 0.68rem;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
   color: var(--grey-700);
   min-height: 58px;
+  text-align: center;
 }
 .msticky__item svg {
   width: 21px;
@@ -41,8 +43,9 @@
   .msticky {
     display: grid;
   }
-  /* Reserve space so the bar never covers footer content. */
+  /* Reserve space so the bar never covers footer content (allows for the
+     "Free Consultation" label wrapping to two lines on narrow phones). */
   body {
-    padding-bottom: 62px;
+    padding-bottom: 96px;
   }
 }

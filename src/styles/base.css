@@ -240,6 +240,7 @@ h4 {
 }
 .btn--block {
   width: 100%;
+  white-space: normal;
 }
 
 /* ---------- Cards ---------- */

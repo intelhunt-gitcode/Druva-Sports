@@ -26,7 +26,7 @@ export function Philosophy() {
             ))}
           </ul>
           <Link to="/contact" className="btn btn--primary" onClick={() => track('cta_click', { cta: 'book_trial', source: 'philosophy' })}>
-            Book a Free Trial <ArrowRight aria-hidden="true" />
+            Book a Free Consultation <ArrowRight aria-hidden="true" />
           </Link>
         </Reveal>
       </div>

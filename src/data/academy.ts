@@ -350,7 +350,7 @@ export const FAQ = {
     },
     {
       q: 'How can I book a trial?',
-      a: 'Use the “Book a Free Trial” form on this website, or message us on WhatsApp / call us directly. We will help you choose a suitable batch and location.',
+      a: 'Use the “Book a Free Consultation” form on this website, or message us on WhatsApp / call us directly. We will help you choose a suitable batch and location.',
     },
   ] satisfies FaqItem[],
 }
