@@ -39,6 +39,8 @@ export const IMAGES = {
   ogImage: `${B}og-image.jpg`,
 
   hero: `${P}/hero.svg`,
+  /** Promotional hero banners (index1 page carousel) — designed graphics supplied by Druva. */
+  heroBanners: [`${B}hero-banner-1.webp`, `${B}hero-banner-2.webp`, `${B}hero-banner-3.webp`, `${B}hero-banner-4.webp`],
   about: `${P}/about.svg`,
   philosophy: `${P}/philosophy.svg`,
   finalCta: `${P}/final-cta.svg`,

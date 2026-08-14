@@ -12,6 +12,7 @@ import { CoachesPage } from '@/pages/CoachesPage'
 import { GalleryPage } from '@/pages/GalleryPage'
 import { RulesPage } from '@/pages/RulesPage'
 import { ContactPage } from '@/pages/ContactPage'
+import { Index1Page } from '@/pages/Index1Page'
 import { LandingPage } from '@/pages/LandingPage'
 import { NotFoundPage } from '@/pages/NotFoundPage'
 import { LANDING_SLUGS } from '@/data/landingPages'
@@ -32,6 +33,7 @@ export default function App() {
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/rules" element={<RulesPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/index1" element={<Index1Page />} />
           {/* SEO landing pages share one component, driven by :slug */}
           {LANDING_SLUGS.map((slug) => (
             <Route key={slug} path={`/${slug}`} element={<LandingPage />} />
