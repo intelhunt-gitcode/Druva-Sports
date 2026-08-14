@@ -1,0 +1,80 @@
+name: Build & Deploy — demos.intelhunt.com/druva-sports
+
+# Deploys on every push to main. You can also run it manually from the
+# Actions tab (Run workflow).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Never let two deploys run at once.
+concurrency:
+  group: deploy-druva-sports
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (sub-path /druva-sports/)
+        run: npm run build
+        env:
+          BASE_PATH: /druva-sports/
+          VITE_SITE_URL: https://demos.intelhunt.com/druva-sports
+
+      - name: Assemble deploy bundle
+        run: |
+          rm -rf deploy
+          mkdir -p deploy
+          cp -r dist deploy/dist
+          cp server.mjs ecosystem.config.cjs deploy/
+          cp deploy-package.json deploy/package.json
+
+      # Copy the built app to the server. Secrets are configured in the repo
+      # (Settings → Secrets and variables → Actions). See DEPLOYMENT.md.
+      - name: Upload to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.SSH_PORT }}
+          source: "deploy/*"
+          target: ${{ secrets.APP_DIR }}
+          strip_components: 1
+          overwrite: true
+          rm: false
+
+      # Restart the app with PM2 on the configured port.
+      - name: Restart app (PM2)
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            set -e
+            # Make node/npm/pm2 available for CloudPanel site users (nvm).
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+            command -v node || { echo "node not found on PATH"; exit 1; }
+            command -v pm2 >/dev/null 2>&1 || npm install -g pm2
+            cd "${{ secrets.APP_DIR }}"
+            pm2 startOrReload ecosystem.config.cjs --update-env
+            pm2 save
+            sleep 2
+            # Smoke test against the app port.
+            curl -fsS "http://127.0.0.1:3919/druva-sports/healthz" && echo " — app is up"

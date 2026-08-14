@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 880" width="800" height="880" role="img" aria-label="FOOTWORK">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#087AC1"/>
+      <stop offset="1" stop-color="#4B1FA3"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.8" cy="0.2" r="0.9">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="880" fill="url(#bg)"/>
+  <rect width="800" height="880" fill="url(#glow)"/>
+  
+  <g transform="translate(640,123.20000000000002) scale(8.88888888888889)" opacity="0.28">
+    <circle cx="0" cy="26" r="9" fill="#ffffff"/>
+    <path d="M0 20 L-14 -20 M0 20 L-7 -22 M0 20 L0 -24 M0 20 L7 -22 M0 20 L14 -20"
+      stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+    <path d="M-14 -20 Q0 -30 14 -20" stroke="#ffffff" stroke-width="2.4" fill="none"/>
+  </g>
+  
+  <g transform="translate(96,633.6) scale(6.153846153846154)" opacity="0.18">
+    <circle cx="0" cy="26" r="9" fill="#ffffff"/>
+    <path d="M0 20 L-14 -20 M0 20 L-7 -22 M0 20 L0 -24 M0 20 L7 -22 M0 20 L14 -20"
+      stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+    <path d="M-14 -20 Q0 -30 14 -20" stroke="#ffffff" stroke-width="2.4" fill="none"/>
+  </g>
+  <g font-family="Poppins, Arial, sans-serif" text-anchor="middle">
+    <text x="400" y="440" fill="#ffffff" font-size="67" font-weight="800" letter-spacing="1">FOOTWORK</text>
+    
+  </g>
+</svg>

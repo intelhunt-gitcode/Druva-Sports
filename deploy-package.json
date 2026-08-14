@@ -1,0 +1,10 @@
+{
+  "name": "druva-sports",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Runtime bundle for the Druva Badminton Academy static server (server.mjs). No dependencies — Node core only.",
+  "scripts": {
+    "start": "node server.mjs"
+  }
+}

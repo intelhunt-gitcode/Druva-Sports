@@ -1,0 +1,48 @@
+.msticky {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: var(--z-sticky-cta);
+  display: none;
+  grid-template-columns: 1fr 1fr 1.25fr;
+  background: var(--white);
+  box-shadow: 0 -8px 24px rgba(16, 11, 37, 0.14);
+  border-top: 1px solid var(--border);
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+.msticky__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 0.6rem 0.4rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: var(--grey-700);
+  min-height: 58px;
+}
+.msticky__item svg {
+  width: 21px;
+  height: 21px;
+}
+.msticky__item--wa {
+  color: #128c3e;
+}
+.msticky__item--trial {
+  background: var(--grad-energy);
+  color: #fff;
+  margin: 6px 6px 6px 0;
+  border-radius: var(--r-md);
+}
+
+@media (max-width: 768px) {
+  .msticky {
+    display: grid;
+  }
+  /* Reserve space so the bar never covers footer content. */
+  body {
+    padding-bottom: 62px;
+  }
+}

@@ -1,0 +1,38 @@
+.logo-img {
+  height: 46px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-text {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1;
+  font-family: var(--font-heading);
+}
+.logo-text__brand {
+  font-weight: 900;
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+  color: var(--purple-700);
+}
+.logo-text__sub {
+  font-weight: 700;
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--orange-500);
+  margin-top: 2px;
+}
+.logo-text--light .logo-text__brand {
+  color: #fff;
+}
+.logo-text--light .logo-text__sub {
+  color: var(--orange-400);
+}
+
+@media (max-width: 480px) {
+  .logo-img {
+    height: 40px;
+  }
+}

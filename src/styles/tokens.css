@@ -1,0 +1,110 @@
+/* ==========================================================================
+   DRUVA DESIGN SYSTEM — DESIGN TOKENS
+   Colours are extracted from the Druva logo (deep royal purple, orange,
+   blue, red/orange). Usage is disciplined: purple = structure/premium,
+   orange = primary CTAs, blue = secondary accents, red→orange = energy.
+   ========================================================================== */
+
+:root {
+  /* ---- Brand palette (from the logo) ---- */
+  --purple-900: #100b25; /* dark section base */
+  --purple-800: #1c1140;
+  --purple-700: #32127a; /* primary purple */
+  --purple-600: #4b1fa3; /* secondary purple */
+  --purple-500: #6234c4;
+  --purple-100: #ece7fb;
+  --purple-050: #f4f1fd;
+
+  --orange-600: #d8551a;
+  --orange-500: #f36a21; /* primary CTA orange */
+  --orange-400: #ff7f39;
+  --orange-100: #ffe9db;
+
+  --red-500: #f04424; /* red/orange energy */
+  --blue-600: #066aa8;
+  --blue-500: #087ac1; /* secondary accent blue */
+  --blue-100: #dceefb;
+
+  /* ---- Neutrals ---- */
+  --white: #ffffff;
+  --grey-050: #f5f7fa; /* light background */
+  --grey-100: #eef1f6;
+  --grey-200: #e2e7f0;
+  --grey-300: #cbd3e0;
+  --grey-400: #9aa5b8;
+  --grey-500: #6b7688;
+  --grey-600: #4a5364;
+  --grey-700: #333c4c;
+  --grey-900: #14181f;
+
+  /* ---- Semantic roles ---- */
+  --bg: var(--white);
+  --bg-alt: var(--grey-050);
+  --bg-dark: var(--purple-900);
+  --surface: var(--white);
+  --text: #1a1f2b;
+  --text-muted: var(--grey-600);
+  --text-on-dark: #f3f1fb;
+  --text-on-dark-muted: #b7b0d6;
+  --border: var(--grey-200);
+  --border-dark: rgba(255, 255, 255, 0.12);
+
+  --primary: var(--purple-700);
+  --accent: var(--orange-500);
+  --accent-hover: var(--orange-600);
+
+  /* ---- Gradients ---- */
+  --grad-energy: linear-gradient(135deg, var(--red-500) 0%, var(--orange-500) 100%);
+  --grad-brand: linear-gradient(135deg, var(--purple-700) 0%, var(--purple-600) 55%, var(--blue-500) 130%);
+  --grad-hero-overlay: linear-gradient(
+    115deg,
+    rgba(16, 11, 37, 0.94) 0%,
+    rgba(50, 18, 122, 0.82) 42%,
+    rgba(16, 11, 37, 0.6) 100%
+  );
+  --grad-dark: linear-gradient(160deg, var(--purple-900) 0%, #1a0f43 60%, #2a1266 100%);
+
+  /* ---- Typography ---- */
+  --font-heading: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
+
+  --fs-hero: clamp(2.75rem, 8vw, 6rem);
+  --fs-h1: clamp(2rem, 5vw, 3.4rem);
+  --fs-h2: clamp(1.7rem, 4vw, 2.75rem);
+  --fs-h3: clamp(1.25rem, 2.4vw, 1.6rem);
+  --fs-lead: clamp(1.05rem, 1.6vw, 1.3rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-eyebrow: 0.8rem;
+
+  /* ---- Spacing & layout ---- */
+  --container: 1200px;
+  --container-wide: 1360px;
+  --gutter: clamp(1.1rem, 4vw, 2.5rem);
+  --section-y: clamp(3.5rem, 8vw, 7rem);
+
+  /* ---- Radii ---- */
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 22px;
+  --r-xl: 30px;
+  --r-pill: 999px;
+
+  /* ---- Shadows (premium, soft) ---- */
+  --shadow-xs: 0 1px 2px rgba(16, 11, 37, 0.06);
+  --shadow-sm: 0 4px 14px rgba(16, 11, 37, 0.07);
+  --shadow-md: 0 12px 30px rgba(16, 11, 37, 0.1);
+  --shadow-lg: 0 24px 60px rgba(16, 11, 37, 0.16);
+  --shadow-accent: 0 14px 30px rgba(243, 106, 33, 0.32);
+  --shadow-purple: 0 16px 40px rgba(50, 18, 122, 0.28);
+
+  /* ---- Motion ---- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 0.45s;
+
+  /* ---- Layers ---- */
+  --z-header: 900;
+  --z-mobile-menu: 950;
+  --z-sticky-cta: 940;
+  --z-modal: 1000;
+}
