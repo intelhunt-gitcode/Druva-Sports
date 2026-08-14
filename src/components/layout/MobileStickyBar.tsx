@@ -33,7 +33,7 @@ export function MobileStickyBar() {
         onClick={() => track('cta_click', { cta: 'book_trial', source: 'sticky_bar' })}
       >
         <CalendarCheck aria-hidden="true" />
-        <span>Free Consultation</span>
+        <span>Meet Your Coach🏸</span>
       </Link>
     </nav>
   )

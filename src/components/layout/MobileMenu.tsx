@@ -60,7 +60,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
               onClose()
             }}
           >
-            Book a Free Consultation
+            Meet Your Coach🏸
           </Link>
           <div className="mmenu__contact">
             <a href={telUrl(CONTACT.office.phone)} className="btn btn--ghost btn--block" onClick={() => track('phone_click', { source: 'mobile_menu' })}>

@@ -37,7 +37,7 @@ export function Header() {
               className="btn btn--primary btn--sm header__cta"
               onClick={() => track('cta_click', { cta: 'book_trial', source: 'header' })}
             >
-              Book a Free Consultation
+              Meet Your Coach🏸
             </Link>
             <button
               type="button"
