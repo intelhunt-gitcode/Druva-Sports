@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import { useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
 import { Menu } from 'lucide-react'
 import { Logo } from '@/components/ui/Logo'
 import { MobileMenu } from './MobileMenu'
@@ -8,28 +8,14 @@ import { track } from '@/lib/analytics'
 import './Header.css'
 
 export function Header() {
-  const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const location = useLocation()
-
-  // Only the homepage has a hero the header can sit transparently over.
-  const overHero = location.pathname === '/'
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  const solid = scrolled || !overHero
 
   return (
     <>
-      <header className={`header ${solid ? 'header--solid' : 'header--transparent'}`}>
+      <header className="header header--solid">
         <div className="container container--wide header__inner">
           <Link to="/" className="header__brand" aria-label="Druva Badminton Academy — Home">
-            <Logo variant={solid ? 'default' : 'light'} />
+            <Logo variant="default" />
           </Link>
 
           <nav className="header__nav" aria-label="Primary">
