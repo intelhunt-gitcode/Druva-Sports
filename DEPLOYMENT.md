@@ -143,6 +143,23 @@ pm2 reload druva-sports          # subsequent updates
 pm2 logs druva-sports            # view logs
 ```
 
+## Second deployment target — idruva.intelhunt.com
+
+The same repo also deploys, in parallel, to a dedicated subdomain
+`idruva.intelhunt.com` (root path, not a sub-path) via a separate workflow:
+`.github/workflows/deploy-idruva.yml`.
+
+- **Server:** `103.192.199.216`, site user `intelhunt-idruva`, app port `3901`.
+- **PM2 config:** `ecosystem.idruva.config.cjs` (renamed to `ecosystem.config.cjs`
+  in that job's own deploy bundle — the two targets never share a bundle).
+- **Build:** `BASE_PATH=/` (root), so asset/favicon/manifest links are
+  root-relative instead of `/druva-sports/`-prefixed.
+- **Secrets:** `IDRUVA_SSH_HOST`, `IDRUVA_SSH_PORT`, `IDRUVA_SSH_USER`,
+  `IDRUVA_SSH_PASSWORD`, `IDRUVA_APP_DIR` (parallel to the `SSH_*`/`APP_DIR`
+  secrets used by the original `deploy.yml`).
+- Both workflows trigger on every push to `main` and run independently
+  (separate concurrency groups), so a single push updates both sites.
+
 ## Troubleshooting
 
 - **502 / Bad Gateway:** the app isn't running or is on the wrong port.
